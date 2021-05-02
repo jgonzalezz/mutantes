@@ -14,6 +14,9 @@ subprojects {
     sourceCompatibility = JavaVersion.VERSION_1_8
 
     dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+
+
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"

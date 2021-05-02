@@ -4,11 +4,9 @@ server:
 spring:
   application:
     name: adn-mutante
-  devtools:
-    add-properties: false
-  h2:
-    console:
-      enabled: true
-      path: /h2
-  profiles:
-    include:
+
+_env: local
+
+logging:
+  level:
+    root: info
