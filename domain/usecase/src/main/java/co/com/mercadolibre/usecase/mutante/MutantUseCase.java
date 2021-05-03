@@ -1,21 +1,30 @@
 package co.com.mercadolibre.usecase.mutante;
 
+import co.com.mercadolibre.model.mutante.Mutante;
+import co.com.mercadolibre.model.mutante.gateways.MutanteRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+
+import java.util.Arrays;
 
 @Log4j2
 @RequiredArgsConstructor
 public class MutantUseCase {
 
-    private boolean isMutant;
+    private boolean isMutant = false;
     private static final int NITROGEN_BASE_COUNT = 4;
     private static final int MUTANT_SEQUENCE_COUNT = 2;
 
+    private final MutanteRepository mutanteRepository;
+
     public boolean isMutant(String[] dna) {
 
-        isMutant = false;
         this.isMutant = searchSequencesInArray(dna);
-        //guardar id array muntante
+        Mutante mutante = new Mutante();
+        mutante.setMutant(this.isMutant);
+        mutante.setDna(Arrays.toString(dna));
+        mutanteRepository.createMutant(mutante);
+        int mutantes = mutanteRepository.countMutant(false);
         return isMutant;
 
     }

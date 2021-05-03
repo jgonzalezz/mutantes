@@ -7,6 +7,12 @@ spring:
 
 _env: local
 
+aws:
+  region: us-east-1
+  dynamodb:
+    endpoint:  http://localhost:4566
+    tableName: dna-mutants
+
 logging:
   level:
     root: info

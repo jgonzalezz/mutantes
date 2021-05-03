@@ -1,6 +1,8 @@
 package co.com.mercadolibre.api;
 
+import co.com.mercadolibre.model.stats.Stats;
 import co.com.mercadolibre.usecase.mutante.MutantUseCase;
+import co.com.mercadolibre.usecase.stats.StatsUseCase;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import lombok.AllArgsConstructor;
@@ -11,9 +13,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Type;
-import java.util.*;
-
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Log4j2
 @RestController
@@ -22,6 +25,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class ApiRest {
 
     private final MutantUseCase mutantUseCase;
+    private final StatsUseCase statsUseCase;
     private static final Set<Character> CHARACTERS =
             new HashSet<>(Arrays.asList('A', 'T', 'C', 'G'));
 
@@ -38,6 +42,11 @@ public class ApiRest {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
     }
 
+    @GetMapping(value = "/stats")
+    public ResponseEntity<Stats> getStats() {
+        return ResponseEntity.ok(statsUseCase.getStats());
+    }
+
     private String[] bodyToArray(String body) throws JsonSyntaxException {
         Gson g = new Gson();
         JsonObject jsonObject = new JsonParser().parse(body).getAsJsonObject();
@@ -49,8 +58,6 @@ public class ApiRest {
 
     private boolean dnaValidations(String[] dna) {
         boolean isValid = false;
-        //validar si es cuadrada
-
         if(dna.length < 4){
             isValid = false;
         }
