@@ -5,4 +5,6 @@ import lombok.Data;
 @Data
 @Builder(toBuilder = true)
 public class Mutante {
+    String dna;
+    boolean mutant;
 }
