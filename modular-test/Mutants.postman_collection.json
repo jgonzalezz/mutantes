@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "e01c3cc3-b2b2-493d-9538-9b37da377487",
+		"name": "Mutants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ValidateAdn Local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dna\": [\n        \"ATGCGA\",\n        \"CAGTGC\",\n        \"TTATGT\",\n        \"AGAAGG\",\n        \"CCCCTA\",\n        \"TCACTG\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/mutant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get stats Local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valita ADN -AWS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dna\": [\n        \"ATGCGA\",\n        \"CAGTGC\",\n        \"TTATGT\",\n        \"AGAAGG\",\n        \"CCCCTA\",\n        \"TCACTG\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://adnmutant-env.eba-rpdwbmzt.us-east-1.elasticbeanstalk.com/api/mutant",
+					"protocol": "http",
+					"host": [
+						"adnmutant-env",
+						"eba-rpdwbmzt",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stats AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://adnmutant-env.eba-rpdwbmzt.us-east-1.elasticbeanstalk.com/api/stats",
+					"protocol": "http",
+					"host": [
+						"adnmutant-env",
+						"eba-rpdwbmzt",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
