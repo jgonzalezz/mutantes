@@ -15,13 +15,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DynamoDbConfig {
 
-    @Value("${aws.region}")
-    private String region;
-
-    public static final String SERVICE_ENDPOINT = "dynamodb.us-east-1.amazonaws.com";
-    public static final String REGION = "us-east-1";
-    public static final String ACCESS_KEY = "AKIARSGQREU44SVIXEN2";
-    public static final String SECRET_KEY = "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";
+    public static final String SERVICE_ENDPOINT = "";
+    public static final String REGION = "";
+    public static final String ACCESS_KEY = "";
+    public static final String SECRET_KEY = "";
 
     @Bean
     public DynamoDBMapper mapper() {

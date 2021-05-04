@@ -1,17 +1,9 @@
 ##Spring Configuration
 server:
-  port: 8090
+  port: 5000
 spring:
   application:
     name: adn-mutante
-
-_env: local
-
-aws:
-  region: us-east-1
-  dynamodb:
-    endpoint:  http://localhost:4566
-    tableName: dna-mutants
 
 logging:
   level:
