@@ -17,18 +17,19 @@ public class MutantUseCase {
 
     private final MutanteRepository mutanteRepository;
 
+    //Validamos el dna y lo guardamos en la bd
     public boolean isMutant(String[] dna) {
-
         this.isMutant = searchSequencesInArray(dna);
         Mutante mutante = new Mutante();
         mutante.setMutant(this.isMutant);
         mutante.setDna(Arrays.toString(dna));
         mutanteRepository.createMutant(mutante);
-        int mutantes = mutanteRepository.countMutant(false);
         return isMutant;
-
     }
 
+    // Buscamos las 2 secuencias necesarias en el array dna
+    // La busqueda en el array se realiza en 4 flujos
+    // Vertical(TopDown), Horizontal(LeftRight), Diagonales(RightLeft,LeftRight)
     private boolean searchSequencesInArray(String[] dna) {
 
         int count = 0;

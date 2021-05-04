@@ -2,7 +2,6 @@ package co.com.mercadolibre.usecase.stats;
 
 import co.com.mercadolibre.model.mutante.gateways.MutanteRepository;
 import co.com.mercadolibre.model.stats.Stats;
-import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -12,11 +11,11 @@ public class StatsUseCase {
 
     private final MutanteRepository mutanteRepository;
 
-
     public Stats getStats(){
         int totalMutants = getTotalMutants(true);
         int totalHumans = getTotalHumans(false);
-        double ratio = totalMutants/totalHumans;
+        double ratio = (totalMutants > 0 && totalHumans > 0 ?
+                totalMutants / totalHumans : 0.0);
 
         return  Stats.builder()
                 .count_human_dna(totalHumans)

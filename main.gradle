@@ -19,8 +19,6 @@ subprojects {
         implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.926')
         implementation 'com.amazonaws:aws-java-sdk-dynamodb'
 
-
-
         testImplementation('junit:junit:4.13')
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
