@@ -32,7 +32,8 @@ http://adnmutant-env.eba-rpdwbmzt.us-east-1.elasticbeanstalk.com/api/mutant
         "CCCCTA",
         "TCACTG"
     ]
-}```
+}
+```
 **Response** para DNA Mutante
 ```json
 200 OK
