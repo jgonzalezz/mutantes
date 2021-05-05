@@ -60,7 +60,7 @@ http://adnmutant-env.eba-rpdwbmzt.us-east-1.elasticbeanstalk.com/api/stats
 ```
 
 ### Implementacion y tecnologias usadas
-- [Java11](http://sparkjava.com)
+- [Java11](https://docs.oracle.com/en/java/javase/11/)
 - [SpringBoot](https://spring.io/projects/spring-boot)
 - [DynamoDb](https://aws.amazon.com/es/dynamodb)
 - [Gson](https://github.com/google/gson)
