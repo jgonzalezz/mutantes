@@ -23,8 +23,16 @@ http://adnmutant-env.eba-rpdwbmzt.us-east-1.elasticbeanstalk.com/api/mutant
 ```
 **Body** 
 ```json
-“dna”:["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
-```
+{
+    "dna": [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+    ]
+}```
 **Response** para DNA Mutante
 ```json
 200 OK
