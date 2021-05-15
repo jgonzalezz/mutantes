@@ -15,7 +15,7 @@ public class StatsUseCase {
         int totalMutants = getTotalMutants(true);
         int totalHumans = getTotalHumans(false);
         double ratio = (totalMutants > 0 && totalHumans > 0 ?
-                totalMutants / totalHumans : 0.0);
+                (double)totalMutants / totalHumans : 0.0);
 
         return  Stats.builder()
                 .count_human_dna(totalHumans)
